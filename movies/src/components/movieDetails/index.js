@@ -56,6 +56,19 @@ const MovieDetails = ( props) => {
           label={`${movie.vote_average} (${movie.vote_count}`}
         />
         <Chip label={`Released: ${movie.release_date}`} />
+        <Paper component="ul" sx={{...root}}>
+        <Chip label={'Production countries'} color="primary"
+        />
+        {movie.production_countries.map((p) => (
+            <li key={p.name}>
+                <Chip label={p.name} sx={{...chip}}/>
+                </li>
+
+
+        ))}
+        
+
+        </Paper>
       </Paper>
       <Fab
         color="secondary"
