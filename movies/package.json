@@ -12,7 +12,8 @@
     "@testing-library/user-event": "^13.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-scripts": "^5.0.1",
+    "react-router-dom": "^6.18.0",
+    "react-scripts": "^3.0.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -23,17 +24,7 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:storybook/recommended",
-      "plugin:storybook/recommended",
-      "plugin:storybook/recommended",
-      "plugin:storybook/recommended",
-      "plugin:storybook/recommended"
-    ]
-  },
+  
   "browserslist": {
     "production": [
       ">0.2%",
@@ -53,7 +44,7 @@
     "@storybook/addon-links": "^7.5.1",
     "@storybook/addon-onboarding": "^1.0.8",
     "@storybook/blocks": "^7.5.1",
-    "@storybook/preset-create-react-app": "^7.5.1",
+    "@storybook/preset-create-react-app": "^4.1.0",
     "@storybook/react": "^7.5.1",
     "@storybook/react-webpack5": "^7.5.1",
     "@storybook/testing-library": "^0.2.2",

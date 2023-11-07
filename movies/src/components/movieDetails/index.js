@@ -63,9 +63,7 @@ const MovieDetails = ( props) => {
             <li key={p.name}>
                 <Chip label={p.name} sx={{...chip}}/>
                 </li>
-
-
-        ))}
+         ))}
         
 
         </Paper>
