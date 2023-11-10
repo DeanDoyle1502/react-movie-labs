@@ -18,15 +18,15 @@ const UpcomingMovies = () => {
   }
 
   
-  const favorites = upcomingMovies.filter(m => m.favorite)
-  localStorage.setItem('favorites', JSON.stringify(favorites))
+  // const favorites = upcomingMovies.filter(m => m.favorite)
+  // localStorage.setItem('favorites', JSON.stringify(favorites))
 
-  const addToFavorites = (movieId) => {
-    const updatedMovies = upcomingMovies.map((m) =>
-      m.id === movieId ? { ...m, favorite: true } : m
-    );
-    setMovies(updatedMovies);
-  };
+  // const addToFavorites = (movieId) => {
+  //   const updatedMovies = upcomingMovies.map((m) =>
+  //     m.id === movieId ? { ...m, favorite: true } : m
+  //   );
+  //   setMovies(updatedMovies);
+  // };
 
 
 
@@ -53,7 +53,7 @@ const addToMustWatch = (movieId) => {
       action={(movie) => {
         return <AddToMustWatchIcon movie={movie} />
       }}
-      selectFavorite={addToFavorites}
+      // selectFavorite={addToFavorites}
       selectMustWatch={addToMustWatch}
     />
     

@@ -16,6 +16,7 @@ import {Link} from "react-router-dom";
 import Avatar from '@mui/material/Avatar';
 import React, { useContext  } from "react";
 import { MoviesContext } from "../../contexts/moviesContext";
+import PlaylistAdd from "@mui/icons-material/PlaylistAdd";
 
 export default function MovieCard({ movie, action }) {
   const { favorites, addToFavorites } = useContext(MoviesContext);
@@ -26,6 +27,14 @@ export default function MovieCard({ movie, action }) {
     movie.favorite = false
   }
 
+  const { mustWatch, addToMustWatch } = useContext(MoviesContext);
+  
+  if (mustWatch.find((id) => id === movie.id)) {
+    movie.mustWatch = true;
+  } else {
+    movie.mustWatch = false
+  }
+  
   const handleAddToFavorite = (e) => {
     e.preventDefault();
     addToFavorites(movie);
@@ -33,17 +42,21 @@ export default function MovieCard({ movie, action }) {
 
   return (
     <Card sx={{ maxWidth: 345 }}>
-       <CardHeader
+      <CardHeader
         avatar={
           movie.favorite ? (
             <Avatar sx={{ backgroundColor: 'red' }}>
               <FavoriteIcon />
             </Avatar>
+          ) : movie.mustWatch ? (
+            <Avatar sx={{ backgroundColor: 'blue' }}>
+              <PlaylistAdd />
+            </Avatar>
           ) : null
         }
         title={
           <Typography variant="h5" component="p">
-            {movie.title}{" "}
+            {movie.title}
           </Typography>
         }
       />
@@ -66,7 +79,7 @@ export default function MovieCard({ movie, action }) {
           <Grid item xs={6}>
             <Typography variant="h6" component="p">
               <StarRateIcon fontSize="small" />
-              {"  "} {movie.vote_average}{" "}
+              {" "} {movie.vote_average} {" "}
             </Typography>
           </Grid>
         </Grid>
@@ -80,5 +93,4 @@ export default function MovieCard({ movie, action }) {
         </Link>
       </CardActions>
     </Card>
-  );
-}
+  )};
